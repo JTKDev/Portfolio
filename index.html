@@ -279,7 +279,7 @@
                 </div>
             </div>
 
-            <!-- Right Column: Interactive Profile Photo Card -->
+            <!-- Right Column: Locked Profile Photo Card -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-sm tilt-card">
                     <!-- Floating Badges around Photo -->
@@ -303,115 +303,17 @@
                         </div>
                     </div>
 
-                    <!-- Profile Photo Frame -->
+                    <!-- Profile Photo Frame (Locked Static) -->
                     <div class="profile-aura rounded-3xl p-1.5">
                         <div class="glass-card rounded-3xl overflow-hidden bg-slate-950/90 p-3">
-                            <div
-                                id="profile-dropzone"
-                                onclick="triggerPhotoSelect('profile-upload')"
-                                ondragover="handleDragOver(event, 'profile-dropzone')"
-                                ondragleave="handleDragLeave(event, 'profile-dropzone')"
-                                ondrop="handlePhotoDrop(event, 'profile-photo-img', 'jaithilak_profile_photo_v2', 'profile-svg-illustration', 'profile-hint-pill')"
-                                class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 group flex items-center justify-center interactive-el select-none border border-transparent transition-all"
-                                title="Click or drag & drop jtk.jpeg here"
-                            >
-                                <!-- High-Detail Custom SVG Portrait Illustration (Always visible immediately until jtk.jpeg loads) -->
-                                <svg id="profile-svg-illustration" viewBox="0 0 400 500" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#0f172a" />
-                                            <stop offset="50%" stop-color="#1e1b4b" />
-                                            <stop offset="100%" stop-color="#060913" />
-                                        </linearGradient>
-                                        <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#c68652" />
-                                            <stop offset="100%" stop-color="#9c6234" />
-                                        </linearGradient>
-                                        <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#f8fafc" />
-                                            <stop offset="100%" stop-color="#cbd5e1" />
-                                        </linearGradient>
-                                        <radialGradient id="glowCyan" cx="50%" cy="35%" r="50%">
-                                            <stop offset="0%" stop-color="rgba(0, 242, 254, 0.25)" />
-                                            <stop offset="100%" stop-color="rgba(0, 242, 254, 0)" />
-                                        </radialGradient>
-                                        <pattern id="geoPrint" width="40" height="40" patternUnits="userSpaceOnUse">
-                                            <path d="M 5 5 L 35 5 L 35 35 L 5 35 Z" fill="none" stroke="#1e293b" stroke-width="1.8" stroke-dasharray="6,4"/>
-                                            <rect x="12" y="12" width="10" height="10" fill="#0f172a" opacity="0.75"/>
-                                            <circle cx="28" cy="28" r="4" fill="#334155" opacity="0.65"/>
-                                            <path d="M 0 20 L 40 20 M 20 0 L 20 40" stroke="#0f172a" stroke-width="1" opacity="0.4"/>
-                                        </pattern>
-                                    </defs>
-
-                                    <!-- Studio Backdrop -->
-                                    <rect width="400" height="500" fill="url(#bgGrad)" />
-                                    <circle cx="200" cy="190" r="180" fill="url(#glowCyan)" />
-                                    <!-- Warm Ambient Lounge Shapes -->
-                                    <rect x="-20" y="120" width="130" height="260" rx="24" fill="#3b1d2e" opacity="0.45" />
-                                    <rect x="290" y="90" width="130" height="290" rx="24" fill="#2e1a36" opacity="0.45" />
-
-                                    <!-- Shoulders & White Geometric Patterned T-Shirt (matching jtk.jpeg) -->
-                                    <path d="M 35 500 C 40 375, 110 345, 200 345 C 290 345, 360 375, 365 500 Z" fill="url(#shirtGrad)" />
-                                    <path d="M 35 500 C 40 375, 110 345, 200 345 C 290 345, 360 375, 365 500 Z" fill="url(#geoPrint)" />
-
-                                    <!-- Neck -->
-                                    <path d="M 162 285 L 162 360 Q 200 380 238 360 L 238 285 Z" fill="url(#skinGrad)" />
-                                    <!-- Silver Chain Necklace (matching jtk.jpeg) -->
-                                    <path d="M 155 348 Q 200 455 245 348" fill="none" stroke="#e2e8f0" stroke-width="3.5" stroke-dasharray="8,2" />
-                                    <path d="M 155 348 Q 200 455 245 348" fill="none" stroke="#94a3b8" stroke-width="1.2" />
-
-                                    <!-- Ears -->
-                                    <ellipse cx="118" cy="215" rx="16" ry="28" fill="url(#skinGrad)" transform="rotate(-8 118 215)" />
-                                    <ellipse cx="282" cy="222" rx="15" ry="26" fill="url(#skinGrad)" transform="rotate(8 282 222)" />
-
-                                    <!-- Head / Face Contour -->
-                                    <path d="M 124 165 C 122 255, 152 312, 200 315 C 248 312, 278 255, 276 165 C 274 110, 245 88, 200 88 C 155 88, 126 110, 124 165 Z" fill="url(#skinGrad)" />
-
-                                    <!-- Stylish Dark Hair (Swept Side Volume) -->
-                                    <path d="M 116 178 C 108 120, 138 68, 202 65 C 262 63, 294 105, 284 175 C 276 142, 255 122, 218 118 C 175 114, 142 130, 125 168 Z" fill="#141418" />
-                                    <path d="M 135 85 Q 195 52 262 85 Q 220 72 155 98 Z" fill="#27272a" opacity="0.6" />
-
-                                    <!-- Eyebrows -->
-                                    <path d="M 146 174 Q 168 164 188 173" fill="none" stroke="#18181b" stroke-width="5" stroke-linecap="round" />
-                                    <path d="M 216 176 Q 238 167 258 178" fill="none" stroke="#18181b" stroke-width="5" stroke-linecap="round" />
-
-                                    <!-- Eyes -->
-                                    <ellipse cx="168" cy="193" rx="15" ry="9" fill="#ffffff" />
-                                    <circle cx="169" cy="193" r="7.5" fill="#1c1917" />
-                                    <circle cx="166" cy="190" r="2.5" fill="#ffffff" />
-
-                                    <ellipse cx="236" cy="196" rx="15" ry="9" fill="#ffffff" />
-                                    <circle cx="235" cy="196" r="7.5" fill="#1c1917" />
-                                    <circle cx="232" cy="193" r="2.5" fill="#ffffff" />
-
-                                    <!-- Nose -->
-                                    <path d="M 202 192 L 198 232 Q 190 242 204 244 Q 214 243 210 235" fill="none" stroke="#7c4722" stroke-width="3.2" stroke-linecap="round" />
-
-                                    <!-- Friendly Smile with Subtle Braces Glint (matching jtk.jpeg) -->
-                                    <path d="M 166 258 Q 200 282 236 260 Q 200 268 166 258 Z" fill="#e2e8f0" stroke="#7c2d12" stroke-width="2.5" />
-                                    <line x1="176" y1="264" x2="226" y2="265" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4,3" />
-                                    <path d="M 164 257 Q 200 286 238 259" fill="none" stroke="#9a3412" stroke-width="3" stroke-linecap="round" />
-                                </svg>
-
-                                <!-- Real Profile Image (Automatically covers SVG as soon as jtk.jpeg or localStorage loads) -->
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 group flex items-center justify-center select-none border border-transparent">
+                                <!-- Real Profile Image -->
                                 <img
                                     id="profile-photo-img"
-                                    src="./jtk.jpeg"
+                                    src="jtk.jpeg"
                                     alt="R R JAITHILAK"
-                                    onload="onPhotoLoaded('profile-photo-img', 'profile-svg-illustration', 'profile-hint-pill')"
-                                    onerror="onPhotoError('profile-photo-img', 'jaithilak_profile_photo_v2', 'profile-svg-illustration', 'profile-hint-pill')"
-                                    class="hidden absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 z-10"
+                                    class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 z-10"
                                 />
-
-                                <!-- Subtle Auto-Hiding Pill (Only visible if local file hasn't been loaded into sandbox yet) -->
-                                <div id="profile-hint-pill" class="absolute top-3 inset-x-3 z-20 flex justify-center pointer-events-none">
-                                    <span class="px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-cyan-400/40 text-[11px] font-mono text-cyan-300 shadow-lg flex items-center gap-1.5 group-hover:border-cyan-300 group-hover:scale-105 transition-all">
-                                        <i class="fa-solid fa-camera"></i>
-                                        <span>Click or Drop <strong class="text-white">jtk.jpeg</strong> to preview locally</span>
-                                    </span>
-                                </div>
-
-                                <input id="profile-upload" type="file" accept="image/*" class="hidden" onchange="handleImageFileSelect(event, 'profile-photo-img', 'jaithilak_profile_photo_v2', 'profile-svg-illustration', 'profile-hint-pill')" />
 
                                 <!-- Bottom Gradient Overlay -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85 pointer-events-none z-20"></div>
@@ -628,14 +530,11 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                <!-- Highlighted Card: Aqua Regia State Quiz 1st Place (with Stage & Bicycle Photo 1000001647.JPG) -->
+                <!-- Highlighted Card: Aqua Regia State Quiz 1st Place (Locked Stage Photo 1000001647.JPG) -->
                 <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-7 border border-emerald-400/35 flex flex-col justify-between relative overflow-hidden tilt-card">
                     <div class="space-y-4">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono">
-                                <i class="fa-solid fa-crown"></i> STATE-LEVEL CHAMPION • T.I.M.E. AQUA REGIA
-                            </div>
-                            <input id="bicycle-upload" type="file" accept="image/*" class="hidden" onchange="handleImageFileSelect(event, 'bicycle-prize-img', 'jaithilak_quiz_photo_v2', 'quiz-svg-illustration', 'quiz-hint-pill')" />
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono">
+                            <i class="fa-solid fa-crown"></i> STATE-LEVEL CHAMPION • T.I.M.E. AQUA REGIA
                         </div>
 
                         <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">
@@ -646,131 +545,14 @@
                             Secured <strong class="text-emerald-300">First Position</strong> at the prestigious <strong class="text-white">T.I.M.E. Aqua Regia Inter-School State Science Quiz</strong> (Guinness World Record-certified quiz series). Awarded a <strong class="text-amber-300">₹6,000 Winner's Cheque</strong>, Championship Trophy, and a <strong class="text-cyan-300">Brand-New Hercules Bicycle</strong> on stage!
                         </p>
 
-                        <!-- Stage Photo Showcase Frame (1000001647.JPG) - Directly Clickable or Drag & Drop -->
-                        <div
-                            id="quiz-dropzone"
-                            onclick="triggerPhotoSelect('bicycle-upload')"
-                            ondragover="handleDragOver(event, 'quiz-dropzone')"
-                            ondragleave="handleDragLeave(event, 'quiz-dropzone')"
-                            ondrop="handlePhotoDrop(event, 'bicycle-prize-img', 'jaithilak_quiz_photo_v2', 'quiz-svg-illustration', 'quiz-hint-pill')"
-                            class="relative rounded-2xl overflow-hidden border border-emerald-400/40 bg-slate-950 aspect-[16/9] group interactive-el select-none transition-all"
-                            title="Click or drag & drop 1000001647.JPG here"
-                        >
-                            <!-- High-Detail Custom SVG Illustration of the T.I.M.E. Aqua Regia Stage Ceremony (1000001647.JPG) -->
-                            <svg id="quiz-svg-illustration" viewBox="0 0 800 450" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="curtainRed" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#7f1d1d" />
-                                        <stop offset="60%" stop-color="#991b1b" />
-                                        <stop offset="100%" stop-color="#450a0a" />
-                                    </linearGradient>
-                                    <linearGradient id="bannerYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#fef08a" />
-                                        <stop offset="100%" stop-color="#eab308" />
-                                    </linearGradient>
-                                </defs>
-
-                                <!-- Auditorium Red Pleated Curtain Background (matching 1000001647.JPG) -->
-                                <rect width="800" height="450" fill="url(#curtainRed)" />
-                                <!-- Vertical Curtain Folds -->
-                                <g stroke="#450a0a" stroke-width="6" opacity="0.45">
-                                    <line x1="50" y1="0" x2="50" y2="450" /><line x1="110" y1="0" x2="110" y2="450" />
-                                    <line x1="170" y1="0" x2="170" y2="450" /><line x1="230" y1="0" x2="230" y2="450" />
-                                    <line x1="570" y1="0" x2="570" y2="450" /><line x1="630" y1="0" x2="630" y2="450" />
-                                    <line x1="690" y1="0" x2="690" y2="450" /><line x1="750" y1="0" x2="750" y2="450" />
-                                </g>
-                                <!-- Gold Tassel Valance at Top -->
-                                <rect x="0" y="0" width="800" height="58" fill="#7f1d1d" />
-                                <line x1="0" y1="58" x2="800" y2="58" stroke="#f59e0b" stroke-width="5" stroke-dasharray="10,4" />
-
-                                <!-- T.I.M.E. Aqua Regia Yellow Stage Backdrop Banner -->
-                                <rect x="210" y="105" width="380" height="275" rx="6" fill="url(#bannerYellow)" stroke="#ca8a04" stroke-width="4" />
-                                <rect x="235" y="135" width="230" height="140" rx="4" fill="#ffffff" opacity="0.92" />
-                                <text x="225" y="128" fill="#1e293b" font-family="monospace" font-weight="bold" font-size="14">T.I.M.E.</text>
-                                <text x="505" y="128" fill="#0f766e" font-family="sans-serif" font-weight="bold" font-size="14">Aqua Regia</text>
-                                <text x="485" y="340" fill="#713f12" font-family="sans-serif" font-weight="bold" font-size="11">Guinness World Records</text>
-
-                                <!-- Stage Floor -->
-                                <rect x="0" y="380" width="800" height="70" fill="#1e293b" />
-                                <line x1="0" y1="380" x2="800" y2="380" stroke="#f59e0b" stroke-width="2" />
-
-                                <!-- Dignitaries & Winners on Stage -->
-                                <!-- Dignitary Left (Green Shirt) -->
-                                <rect x="295" y="235" width="46" height="145" rx="8" fill="#1e293b" />
-                                <rect x="292" y="185" width="52" height="65" rx="10" fill="#4ade80" />
-                                <circle cx="318" cy="162" r="18" fill="#e2a87c" />
-
-                                <!-- Winner 1: R R JAITHILAK (Center Left, Holding Trophy & Giant Cheque) -->
-                                <rect x="372" y="248" width="44" height="132" rx="6" fill="#1e3a8a" />
-                                <rect x="368" y="195" width="52" height="62" rx="8" fill="#e2e8f0" />
-                                <circle cx="394" cy="172" r="17" fill="#c68652" />
-                                <!-- Star Trophy Held Up -->
-                                <polygon points="418,138 423,150 436,150 425,158 429,170 418,162 407,170 411,158 400,150 413,150" fill="#f59e0b" stroke="#fef08a" stroke-width="1.5" />
-                                <rect x="415" y="168" width="6" height="24" fill="#94a3b8" />
-
-                                <!-- Winner 2 (Center Right) -->
-                                <rect x="444" y="248" width="44" height="132" rx="6" fill="#334155" />
-                                <rect x="440" y="195" width="52" height="62" rx="8" fill="#cbd5e1" />
-                                <circle cx="466" cy="170" r="17" fill="#d4996a" />
-
-                                <!-- Dignitary Right -->
-                                <rect x="515" y="238" width="48" height="142" rx="8" fill="#1e293b" />
-                                <rect x="512" y="188" width="54" height="65" rx="10" fill="#475569" />
-                                <circle cx="539" cy="164" r="18" fill="#d4996a" />
-
-                                <!-- Giant ₹6,000 Winner Cheque in Center -->
-                                <g transform="rotate(2 415 245)">
-                                    <rect x="340" y="218" width="150" height="66" rx="4" fill="#fefce8" stroke="#0284c7" stroke-width="3" />
-                                    <text x="372" y="234" fill="#ca8a04" font-family="sans-serif" font-weight="bold" font-size="9">THE WINNERS</text>
-                                    <text x="362" y="247" fill="#0f172a" font-family="monospace" font-weight="bold" font-size="8.5">SIX THOUSAND ONLY</text>
-                                    <text x="385" y="261" fill="#059669" font-family="monospace" font-weight="bold" font-size="12">₹ 6,000/-</text>
-                                    <text x="348" y="276" fill="#1e3a8a" font-family="sans-serif" font-weight="bold" font-size="10">T.I.M.E.</text>
-                                    <text x="425" y="276" fill="#0d9488" font-family="sans-serif" font-weight="bold" font-size="10">Aqua Regia</text>
-                                </g>
-
-                                <!-- Left Hercules Bicycle (Blue & Red Frame) -->
-                                <g>
-                                    <circle cx="195" cy="348" r="46" fill="none" stroke="#1e293b" stroke-width="9" />
-                                    <circle cx="195" cy="348" r="40" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,6" />
-                                    <circle cx="325" cy="348" r="46" fill="none" stroke="#1e293b" stroke-width="9" />
-                                    <circle cx="325" cy="348" r="40" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,6" />
-                                    <!-- Frame -->
-                                    <path d="M 195 348 L 245 288 L 308 288 L 255 348 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linejoin="round" />
-                                    <line x1="325" y1="348" x2="298" y2="255" stroke="#ef4444" stroke-width="7" stroke-linecap="round" />
-                                    <line x1="245" y1="288" x2="235" y2="262" stroke="#94a3b8" stroke-width="6" />
-                                    <ellipse cx="232" cy="258" rx="16" ry="6" fill="#334155" />
-                                </g>
-
-                                <!-- Right Hercules Bicycle (Cyan & Dark Frame) -->
-                                <g>
-                                    <circle cx="535" cy="352" r="46" fill="none" stroke="#1e293b" stroke-width="9" />
-                                    <circle cx="535" cy="352" r="40" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,6" />
-                                    <circle cx="675" cy="352" r="46" fill="none" stroke="#1e293b" stroke-width="9" />
-                                    <circle cx="675" cy="352" r="40" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,6" />
-                                    <!-- Frame -->
-                                    <path d="M 535 352 L 560 260 M 552 288 L 620 292 L 605 352 L 552 288" fill="none" stroke="#06b6d4" stroke-width="7" stroke-linejoin="round" />
-                                    <line x1="605" y1="352" x2="675" y2="352" stroke="#334155" stroke-width="7" />
-                                    <ellipse cx="624" cy="268" rx="16" ry="6" fill="#475569" />
-                                </g>
-                            </svg>
-
-                            <!-- Real Stage Photo (Automatically covers SVG as soon as 1000001647.JPG or localStorage loads) -->
+                        <!-- Stage Photo Showcase Frame (Locked Static) -->
+                        <div class="relative rounded-2xl overflow-hidden border border-emerald-400/40 bg-slate-950 aspect-[16/9]">
                             <img
                                 id="bicycle-prize-img"
-                                src="./1000001647.JPG"
+                                src="1000001647.JPG"
                                 alt="Aqua Regia Science Quiz 1st Place Stage Award - ₹6,000 Cheque and Hercules Bicycle"
-                                onload="onPhotoLoaded('bicycle-prize-img', 'quiz-svg-illustration', 'quiz-hint-pill')"
-                                onerror="onPhotoError('bicycle-prize-img', 'jaithilak_quiz_photo_v2', 'quiz-svg-illustration', 'quiz-hint-pill')"
-                                class="hidden absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 z-10"
+                                class="absolute inset-0 w-full h-full object-cover object-center z-10"
                             />
-
-                            <!-- Subtle Auto-Hiding Pill (Automatically hides once real image loads) -->
-                            <div id="quiz-hint-pill" class="absolute top-3 right-3 z-20 pointer-events-none">
-                                <span class="px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-emerald-400/40 text-[11px] font-mono text-emerald-300 shadow-lg flex items-center gap-1.5 group-hover:border-emerald-300 group-hover:scale-105 transition-all">
-                                    <i class="fa-solid fa-image"></i>
-                                    <span>Click or Drop <strong class="text-white">1000001647.JPG</strong> to preview locally</span>
-                                </span>
-                            </div>
 
                             <!-- Bottom Caption Overlay -->
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-3.5 flex items-center justify-between pointer-events-none z-20">
@@ -872,7 +654,7 @@
                     <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-1">Featured Projects</h2>
                 </div>
                 <p class="text-slate-400 text-sm max-w-md">
-                    Interactive applications deployed and live on the web. Click on any project to test the live deployment or customize its preview screenshot.
+                    Interactive applications deployed and live on the web. Click on any project to test the live deployment.
                 </p>
             </div>
 
@@ -896,9 +678,7 @@
 
                         <!-- Interactive Visual Screenshot Preview for AgriVision AI -->
                         <div class="relative aspect-[16/10] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden p-5 flex flex-col justify-between">
-                            <img id="proj1-img" src="" alt="AgriVision AI Screenshot" class="hidden absolute inset-0 w-full h-full object-cover z-20" />
-
-                            <div id="proj1-mockup" class="h-full flex flex-col justify-between relative z-10">
+                            <div class="h-full flex flex-col justify-between relative z-10">
                                 <!-- Mock App Top Bar -->
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2.5">
@@ -992,9 +772,7 @@
 
                         <!-- Interactive Visual Screenshot Preview for VIT Campus Monitor -->
                         <div class="relative aspect-[16/10] bg-gradient-to-br from-indigo-950 via-slate-900 to-cyan-950 overflow-hidden p-5 flex flex-col justify-between">
-                            <img id="proj2-img" src="" alt="VIT Campus Monitor Screenshot" class="hidden absolute inset-0 w-full h-full object-cover z-20" />
-
-                            <div id="proj2-mockup" class="h-full flex flex-col justify-between relative z-10">
+                            <div class="h-full flex flex-col justify-between relative z-10">
                                 <!-- Mock App Top Bar -->
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2.5">
@@ -1034,7 +812,7 @@
 
                                 <!-- Mock Status Bar -->
                                 <div class="bg-slate-950/80 border border-cyan-400/30 rounded-xl px-3.5 py-2 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                                    <span><i class="fa-solid fa-satellite-dish text-cyan-400 mr-2"></i>Hostel Mess, Foodys, & Main Gate TrafficSynced</span>
+                                    <span><i class="fa-solid fa-satellite-dish text-cyan-400 mr-2"></i>Hostel Mess, Foodys, & Main Gate Traffic Synced</span>
                                     <span class="text-cyan-400 font-bold">Live Map &rarr;</span>
                                 </div>
                             </div>
@@ -1267,7 +1045,6 @@
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
-                // Subtle attraction/repulsion to mouse
                 const dx = mouseX - this.x;
                 const dy = mouseY - this.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
@@ -1299,7 +1076,6 @@
                 particles[i].update();
                 particles[i].draw();
 
-                // Connect nearby particles
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
@@ -1314,7 +1090,6 @@
                     }
                 }
 
-                // Connect to cursor
                 const mdx = particles[i].x - mouseX;
                 const mdy = particles[i].y - mouseY;
                 const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -1385,7 +1160,7 @@
         });
 
         /* -----------------------------------------------------------
-         * 5. INTERACTIVE TERMINAL LOGIC (No VITEEE rank here)
+         * 5. INTERACTIVE TERMINAL LOGIC
          * ----------------------------------------------------------- */
         const termOutput = document.getElementById('terminal-output');
         const termInput = document.getElementById('terminal-input');
@@ -1452,122 +1227,7 @@
         }
 
         /* -----------------------------------------------------------
-         * 6. PHOTO & SCREENSHOT LIVE PREVIEW + PERSISTENCE SYSTEM
-         * ----------------------------------------------------------- */
-        function triggerPhotoSelect(inputId) {
-            const input = document.getElementById(inputId);
-            if (input) input.click();
-        }
-
-        function onPhotoLoaded(imgId, svgId, pillId) {
-            const imgEl = document.getElementById(imgId);
-            const svgEl = document.getElementById(svgId);
-            const pillEl = document.getElementById(pillId);
-
-            // Verify image actually decoded with non-zero dimensions
-            if (imgEl && imgEl.naturalWidth > 0) {
-                imgEl.classList.remove('hidden');
-                if (svgEl) svgEl.style.display = 'none';
-                if (pillEl) pillEl.style.display = 'none';
-            }
-        }
-
-        function onPhotoError(imgId, storageKey, svgId, pillId) {
-            const savedData = localStorage.getItem(storageKey);
-            const imgEl = document.getElementById(imgId);
-            const svgEl = document.getElementById(svgId);
-            const pillEl = document.getElementById(pillId);
-
-            if (savedData && imgEl && imgEl.src !== savedData) {
-                imgEl.src = savedData;
-                return;
-            }
-
-            // Keep custom SVG illustration visible and show subtle click/drop hint pill
-            if (imgEl) imgEl.classList.add('hidden');
-            if (svgEl) svgEl.style.display = 'block';
-            if (pillEl) pillEl.style.display = 'flex';
-        }
-
-        function handleImageFileSelect(event, imgId, storageKey, svgId, pillId) {
-            const file = event.target.files && event.target.files[0];
-            if (!file) return;
-            loadAndPersistPhotoFile(file, imgId, storageKey, svgId, pillId);
-        }
-
-        function handleDragOver(event, dropzoneId) {
-            event.preventDefault();
-            event.stopPropagation();
-            const dz = document.getElementById(dropzoneId);
-            if (dz) dz.classList.add('ring-2', 'ring-cyan-400');
-        }
-
-        function handleDragLeave(event, dropzoneId) {
-            event.preventDefault();
-            event.stopPropagation();
-            const dz = document.getElementById(dropzoneId);
-            if (dz) dz.classList.remove('ring-2', 'ring-cyan-400');
-        }
-
-        function handlePhotoDrop(event, imgId, storageKey, svgId, pillId) {
-            event.preventDefault();
-            event.stopPropagation();
-            const dz1 = document.getElementById('profile-dropzone');
-            const dz2 = document.getElementById('quiz-dropzone');
-            if (dz1) dz1.classList.remove('ring-2', 'ring-cyan-400');
-            if (dz2) dz2.classList.remove('ring-2', 'ring-cyan-400');
-
-            const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
-            if (!file) return;
-            loadAndPersistPhotoFile(file, imgId, storageKey, svgId, pillId);
-        }
-
-        function loadAndPersistPhotoFile(file, imgId, storageKey, svgId, pillId) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                // Compress slightly via offscreen canvas so high-res photos always fit in localStorage
-                const tempImg = new Image();
-                tempImg.onload = () => {
-                    const maxDim = 1200;
-                    let w = tempImg.width;
-                    let h = tempImg.height;
-                    if (w > maxDim || h > maxDim) {
-                        if (w > h) {
-                            h = Math.round((h * maxDim) / w);
-                            w = maxDim;
-                        } else {
-                            w = Math.round((w * maxDim) / h);
-                            h = maxDim;
-                        }
-                    }
-                    const offCanvas = document.createElement('canvas');
-                    offCanvas.width = w;
-                    offCanvas.height = h;
-                    const offCtx = offCanvas.getContext('2d');
-                    offCtx.drawImage(tempImg, 0, 0, w, h);
-                    const optimizedDataUrl = offCanvas.toDataURL('image/jpeg', 0.88);
-
-                    const imgEl = document.getElementById(imgId);
-                    if (imgEl) {
-                        imgEl.src = optimizedDataUrl;
-                        onPhotoLoaded(imgId, svgId, pillId);
-                    }
-                    if (storageKey) {
-                        try {
-                            localStorage.setItem(storageKey, optimizedDataUrl);
-                        } catch (err) {
-                            console.warn('Photo displayed in session.');
-                        }
-                    }
-                    showToast('Photo loaded & saved!');
-                };
-                tempImg.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-
-        /* -----------------------------------------------------------
-         * 7. CLIPBOARD & CONTACT FORM
+         * 6. CLIPBOARD & CONTACT FORM
          * ----------------------------------------------------------- */
         function copyToClipboard(text, message) {
             const tempInput = document.createElement('textarea');
@@ -1602,21 +1262,6 @@
         }
 
         window.onload = function () {
-            // Check localStorage first for instant photo restoration
-            const savedProfile = localStorage.getItem('jaithilak_profile_photo_v2') || localStorage.getItem('rj_profile_photo');
-            if (savedProfile) {
-                const pImg = document.getElementById('profile-photo-img');
-                pImg.src = savedProfile;
-                onPhotoLoaded('profile-photo-img', 'profile-svg-illustration', 'profile-hint-pill');
-            }
-
-            const savedPrize = localStorage.getItem('jaithilak_quiz_photo_v2') || localStorage.getItem('rj_prize_photo');
-            if (savedPrize) {
-                const qImg = document.getElementById('bicycle-prize-img');
-                qImg.src = savedPrize;
-                onPhotoLoaded('bicycle-prize-img', 'quiz-svg-illustration', 'quiz-hint-pill');
-            }
-
             resizeCanvas();
             animateCanvas();
             tickTypewriter();
